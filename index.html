@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Whaleling Studio · 鲸灵工坊 — a crew of agents for long-form fiction</title>
+<meta name="description" content="鲸灵工坊：DeepSeek Harness 的长篇小说插件。总编、写手、场记、策划、导演、后期，一支 AI 剧组陪你写长篇。Whaleling Studio: a plugin for DeepSeek Harness — a showrunner, a writer and a crew of agents for long-form fiction.">
+<link rel="canonical" href="https://dsh-novel-studio.xuhao1.me/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Whaleling Studio · 鲸灵工坊">
+<meta property="og:description" content="A crew of agents for long-form fiction, on DeepSeek Harness. Open source (LGPL-3.0).">
+<meta property="og:url" content="https://dsh-novel-studio.xuhao1.me/">
+<meta property="og:image" content="https://dsh-novel-studio.xuhao1.me/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script>
+// Language: ?lang= wins, then the last choice, then the browser. Chinese shows without scripts.
+(function () {
+    var root = document.documentElement, saved = null;
+    var asked = new URLSearchParams(location.search).get("lang");
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    var lang = [asked, saved].filter(function (l) { return l === "zh" || l === "en"; })[0]
+        || (/^zh/i.test(navigator.language || "zh") ? "zh" : "en");
+    root.dataset.lang = lang;
+    root.lang = lang === "zh" ? "zh-CN" : "en";
+})();
+</script>
+</head>
+<body>
+
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="#top"><img src="img/icon.webp" alt="" width="30" height="30"><span lang="zh">鲸灵工坊</span><span lang="en">Whaleling Studio</span></a>
+        <nav class="nav-links">
+            <a href="#crew"><span lang="zh">剧组</span><span lang="en">The crew</span></a>
+            <a href="#features"><span lang="zh">功能</span><span lang="en">Features</span></a>
+            <a href="#people"><span lang="zh">画廊</span><span lang="en">Gallery</span></a>
+            <a href="#install"><span lang="zh">安装</span><span lang="en">Install</span></a>
+        </nav>
+        <a class="gh" href="https://github.com/xuhao1/dsh-novel-writer"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        <button class="lang-switch" type="button" id="lang-switch" aria-label="Switch language / 切换语言"><span lang="zh">EN</span><span lang="en">中文</span></button>
+    </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+    <div class="wrap">
+        <span class="pill"><span lang="zh">DeepSeek Harness 插件 · 开源</span><span lang="en">A plugin for DeepSeek Harness · open source</span><b>LGPL-3.0</b></span>
+        <h1 class="wordmark"><span lang="zh">鲸灵工坊<span class="alt">Whaleling Studio</span></span><span lang="en">Whaleling Studio<span class="alt">鲸灵工坊</span></span></h1>
+        <p class="tagline" lang="zh">一支 AI 剧组陪你写长篇。你拿主意；总编规划、写手执笔、场记记账、策划推演、导演排戏、后期剪片——让一个故事里的人、世界和许下的承诺，在几十万字里不走样。</p>
+        <p class="tagline" lang="en">A crew of agents for long-form fiction. You decide; the showrunner plans, the writer writes, continuity keeps the record, the planner works out what could happen, the director stages it and post-production cuts it — so that one story's people, world and promises hold across hundreds of thousands of words.</p>
+        <div class="cta">
+            <a class="btn primary" href="#install"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M3 14h10"/></svg><span lang="zh">安装</span><span lang="en">Install</span></a>
+            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/tutorial.zh.md" lang="zh">新手教程</a>
+            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/tutorial.md" lang="en">Tutorial</a>
+            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a>
+        </div>
+        <p class="caption" lang="zh">桌面版与 Web 界面都能用 · DeepSeek Harness 0.2 · 文字模型用 DSH 里配好的任何一个</p>
+        <p class="caption" lang="en">Desktop app and Web UI · DeepSeek Harness 0.2 · text from any model DSH has</p>
+    </div>
+    <figure class="cover">
+        <img src="img/cover.webp" width="1536" height="1024" alt="DeepSeek-chan, the whale-girl maid, sits on a stack of books reading aloud; the pages fly out and become scenes — Alice following the White Rabbit, the Cheshire Cat in a tree, a Chinese garden with a pavilion and a young lady with a flower hoe — while four little whales carry a clipboard, a story map, a clapperboard and a film reel.">
+        <figcaption class="caption" lang="zh">封面由 GPT Image（经 Codex）绘制。DeepSeek 娘形象参考：上善无形的“溟月”、ZipZipPipe 的 DeepSeek 女仆版设定。</figcaption>
+        <figcaption class="caption" lang="en">Cover drawn with GPT Image through Codex. DeepSeek-chan after 溟月 by 上善无形 and the DeepSeek maid design by ZipZipPipe.</figcaption>
+    </figure>
+</section>
+
+<section id="crew">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">核心想法</span><span lang="en">The idea</span></p>
+        <h2 lang="zh">一个剧组，而不是一个模型。</h2>
+        <h2 lang="en">A crew, not a model.</h2>
+        <p class="lede" lang="zh">擅长规划、调用工具、把大工程理清楚的模型，文笔往往平平；文笔最好的模型，又常常管不好一个工程。鲸灵工坊把活分给一个小班子，各干所长。</p>
+        <p class="lede" lang="en">Models that are excellent at planning, tool use and keeping a large project straight are often mediocre prose stylists, and the best prose models are often poor project managers. Whaleling Studio hands the work to a small company, each doing what it is good at.</p>
+        <div class="crew">
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
+                <h3><span lang="zh">总编</span><span lang="en">Showrunner</span><small lang="zh">Showrunner</small><small lang="en">总编</small></h3>
+                <p class="what" lang="zh">你在对话里交谈的 agent · 任意模型</p>
+                <p class="what" lang="en">the agent you talk to · any model</p>
+                <p class="do" lang="zh">听懂你要什么，做规划，决定下一步写哪里，把活派给班底，向你汇报。自己从不写正文。</p>
+                <p class="do" lang="en">Understands what you want, plans, decides what is written next, gives the crew its work and reports back. It never writes the prose itself.</p>
+            </div>
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 3.8a5.5 5.5 0 0 0-7.8 0L5 11.2V19h7.8l7.4-7.4a5.5 5.5 0 0 0 0-7.8z"/><path d="M16 8 2 22M17.5 15H9"/></svg></span>
+                <h3><span lang="zh">写手</span><span lang="en">Writer</span><small lang="zh">Writer</small><small lang="en">写手</small></h3>
+                <p class="what" lang="zh">你为正文挑的模型 · 一次调用</p>
+                <p class="what" lang="en">a model you pick for prose · one call</p>
+                <p class="do" lang="zh">起草、续写、改写正文。拿到的是为它打包好的设定、人物此刻的状态、前情、相关旧段落、线索、章纲和文风。</p>
+                <p class="do" lang="en">Drafts, continues and rewrites the manuscript, from a pack built for it: the bible, the cast as they stand, the story so far, earlier passages, the threads, the outline and the style.</p>
+            </div>
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4M8.5 12.5l2.3 2.3 4.7-4.8"/></svg></span>
+                <h3><span lang="zh">场记</span><span lang="en">Continuity</span><small lang="zh">Continuity</small><small lang="en">场记</small></h3>
+                <p class="what" lang="zh">DSH 的 agent</p>
+                <p class="what" lang="en">an agent of DSH</p>
+                <p class="do" lang="zh">把每章收录成记忆，像责任编辑一样审校——说"对不上"要拿出处——整理导入的书稿。</p>
+                <p class="do" lang="en">Digests each chapter into memory, reviews like an editor — a claimed contradiction comes with its source — and takes in manuscripts.</p>
+            </div>
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>
+                <h3><span lang="zh">策划</span><span lang="en">Planner</span><small lang="zh">Planner</small><small lang="en">策划</small></h3>
+                <p class="what" lang="zh">DSH 的 agent · 可以上网</p>
+                <p class="what" lang="en">an agent of DSH · can search the web</p>
+                <p class="do" lang="zh">推演大纲与节拍，完善人物与世界观，做"如果……会怎样"的分支推演，查资料。</p>
+                <p class="do" lang="en">Derives outlines and beats, develops characters and the world, explores what-if branches and researches.</p>
+            </div>
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="m4 11-.8-3.6 15.6-3.6.8 3.6zM8.2 6.2l2.4 3.5M13.1 5.1l2.4 3.4"/></svg></span>
+                <h3><span lang="zh">导演</span><span lang="en">Director</span><small lang="zh">Director</small><small lang="en">导演</small></h3>
+                <p class="what" lang="zh">DSH 的 agent</p>
+                <p class="what" lang="en">an agent of DSH</p>
+                <p class="do" lang="zh">编有声脚本、切分镜；你下场演戏时，扮演其他所有人物。</p>
+                <p class="do" lang="en">Directs audio scripts and storyboards, and plays everyone else when you step into a scene.</p>
+            </div>
+            <div class="role">
+                <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4M10.5 9.5v5l4-2.5z"/></svg></span>
+                <h3><span lang="zh">后期</span><span lang="en">Post-production</span><small lang="zh">Post-production</small><small lang="en">后期</small></h3>
+                <p class="what" lang="zh">DSH 的 agent · 有命令行</p>
+                <p class="what" lang="en">an agent of DSH · has a shell</p>
+                <p class="do" lang="zh">把配音、音效和分镜画面剪成视频：自己写脚本、跑命令、检查结果，过了检查才交。</p>
+                <p class="do" lang="en">Cuts voice, sound and storyboard pictures into a video: writes its own script, runs it and checks the result before handing it in.</p>
+            </div>
+        </div>
+        <p class="note" lang="zh">场记、策划、导演、后期不是四段提示词，而是跑在 DSH 自己 agent loop 上的四个真正的 agent。每一次运行都是对话的一个子智能体：点开就能看到它查了什么、交回了什么、花了多少。你也可以不经过对话，直接在工坊里操作——每一项能力两边都有。</p>
+        <p class="note" lang="en">Continuity, the planner, the director and post-production are not four prompts but four real agents on DSH's own agent loop. Every run is a subagent of the conversation: open it and read what it looked up, what it handed in and what it cost. Or skip the conversation and work in the Studio directly — every operation exists in both places.</p>
+    </div>
+</section>
+
+<section id="features">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">看一看</span><span lang="en">A look around</span></p>
+        <h2 lang="zh">对话就是界面，书就开在旁边。</h2>
+        <h2 lang="en">The conversation is the interface. The book is open beside it.</h2>
+        <p class="lede" lang="zh">下面的截图是整部导入的《红楼梦》（八十回）。每一张画都是在工坊里画的。</p>
+        <p class="lede" lang="en">The screenshots below are Lewis Carroll's <em>Alice's Adventures in Wonderland</em>, brought in whole. Every picture in them was drawn in the Studio.</p>
+
+        <figure class="feature-hero" style="margin-top:36px">
+            <div class="shot"><img lang="zh" src="img/shots/zh/hero.webp" alt="鲸灵工坊开在和总编的对话旁边" loading="lazy"><img lang="en" src="img/shots/en/hero.webp" alt="The Studio open beside the conversation with the showrunner" loading="lazy"></div>
+        </figure>
+
+        <div class="feature">
+            <div class="text">
+                <h3 lang="zh">写长篇，不丢线</h3>
+                <h3 lang="en">A long book, and the thread kept</h3>
+                <p lang="zh">每写完一章，场记把它收录成记忆：梗概、硬事实、每个人物章末的状态、线索的进展。每次调用现打一份上下文——前情梗概加上最近几章原文，装得下就是全文——顺着前缀缓存排布。修改都以带差异对比的提案送来，每次采纳都留下原来的版本。</p>
+                <p lang="en">After each chapter, continuity digests it into memory: a summary, hard facts, each character's state at the end, threads moved. Each call gets a context pack built for it — an outline of what came before plus the nearest chapters verbatim, the whole book while it fits — laid out for the prefix cache. Revisions arrive as proposals with a diff, and every applied change keeps the previous version.</p>
+            </div>
+            <figure><div class="shot"><img lang="zh" src="img/shots/zh/write.webp" alt="写作：章节列表、正文和这一章的章纲" loading="lazy"><img lang="en" src="img/shots/en/write.webp" alt="Write: the chapter list, the manuscript and the chapter's plan" loading="lazy"></div></figure>
+        </div>
+
+        <div class="feature flip">
+            <div class="text">
+                <h3 lang="zh">人和世界，记得住也看得见</h3>
+                <h3 lang="en">The people and the world, kept and shown</h3>
+                <p lang="zh">人物卡有结构化的人格、关系、在纸面上的一生（每条剧情线各算各的），还有所有画面都照着画的外貌和声音。查看页里，每个人一页、立绘放大；每个地方是一幅场景，里面的去处和人都标在画上。</p>
+                <p lang="en">Character cards carry a structured persona, relationships, a life on the page (per plot line), and an appearance and a voice that every picture and every line follow. In the viewer, everyone has a page with their portrait large, and every place opens on its picture, with what is in it and who lives there.</p>
+            </div>
+            <figure><div class="shot"><img lang="zh" src="img/shots/zh/people.webp" alt="人物：立绘放大的人物页" loading="lazy"><img lang="en" src="img/shots/en/people.webp" alt="People: a character's page with the portrait large" loading="lazy"></div></figure>
+        </div>
+
+        <div class="feature">
+            <div class="text">
+                <h3 lang="zh">走进书里的地方</h3>
+                <h3 lang="en">Step into the places of the book</h3>
+                <p lang="zh">世界观条目分级、层层嵌套。有设定图的地方就是一幅场景：馆阁、住在里面的人都标在画上，点一下就走进去；拖动滑块，看它在某一章时的样子。</p>
+                <p lang="en">World entries are ranked and nested. Where a place has design art, the picture is a scene: what is in it and who is there are marked on it, each mark a way in; a slider shows it as the story stood at any chapter.</p>
+            </div>
+            <figure><div class="shot"><img lang="zh" src="img/shots/zh/world.webp" alt="世界：一个地方是一幅场景，里面有什么标在画上" loading="lazy"><img lang="en" src="img/shots/en/world.webp" alt="World: a place as a scene, with what is in it marked on the picture" loading="lazy"></div></figure>
+        </div>
+
+        <div class="shot-pair">
+            <figure>
+                <div class="shot"><img lang="zh" src="img/shots/zh/read.webp" alt="阅读：插图就在正文里" loading="lazy"><img lang="en" src="img/shots/en/read.webp" alt="Read: the illustration in the text" loading="lazy"></div>
+                <figcaption lang="zh">阅读——一个开关换成收听，每个说话的人全书一个声音。</figcaption>
+                <figcaption lang="en">Read — one switch turns it to Listen, every speaker in one voice across the book.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot"><img lang="zh" src="img/shots/zh/gallery.webp" alt="图库：人设图、立绘、地点和封面" loading="lazy"><img lang="en" src="img/shots/en/gallery.webp" alt="Gallery: design sheets, portraits, places and the cover" loading="lazy"></div>
+                <figcaption lang="zh">图库——一本书一种画风；每张画都记着它是照着什么画的。</figcaption>
+                <figcaption lang="en">Gallery — one look per book; every picture records what it was made from.</figcaption>
+            </figure>
+        </div>
+
+        <div class="grid">
+            <div class="cell"><h3 lang="zh">导入写完的书</h3><h3 lang="en">Bring in a finished book</h3><p lang="zh">txt、md、epub、docx：拆章、收录、归并人物、收齐世界观、重建大纲、学会文风，然后接着写。</p><p lang="en">txt, md, epub, docx: chapters found, digested, cast merged, world collected, outline rebuilt, style learned — then keep going.</p></div>
+            <div class="cell"><h3 lang="zh">五种改法</h3><h3 lang="en">Five ways to change a book</h3><p lang="zh">推演下一步、改一段、改一章、全书改一处、改设定并贯彻到全书——都以提案送来。</p><p lang="en">Derive what's next, fix a passage, rework a chapter, change something across the book, carry a world change through — all as proposals.</p></div>
+            <div class="cell"><h3 lang="zh">剧情图</h3><h3 lang="en">The plot graph</h3><p lang="zh">故事的其他走向与主线并排，任何一条都能扶正成主线，写过的一个字不丢。</p><p lang="en">Other ways the story could go sit beside the main line; any can become the main line, nothing written is lost.</p></div>
+            <div class="cell"><h3 lang="zh">有声剧</h3><h3 lang="en">Audio drama</h3><p lang="zh">导演切出旁白、对白、内心独白和环境音；每句合成都"听"一遍，不对就重来。</p><p lang="en">The director cuts narration, dialogue, inner voice and ambience; every line is measured after it is spoken, and spoken again if it is off.</p></div>
+            <div class="cell"><h3 lang="zh">有声漫与视频</h3><h3 lang="en">Motion comic and video</h3><p lang="zh">分镜跟着有声脚本走；后期 agent 用 ffmpeg 把一章剪成 MP4，检查过才交。</p><p lang="en">A storyboard tied to the audio script; the post-production agent cuts a chapter into an MP4 with ffmpeg and checks it first.</p></div>
+            <div class="cell"><h3 lang="zh">幕间</h3><h3 lang="en">Interludes</h3><p lang="zh">扮演其中一个人物下场演一场，导演演其他所有人——现生成的视觉小说。</p><p lang="en">Play one of the characters in a scene while the director plays the rest — a visual novel made on the fly.</p></div>
+            <div class="cell"><h3 lang="zh">手机与网站</h3><h3 lang="en">Phone and website</h3><p lang="zh">同一个 Wi-Fi 下手机扫码就读；也可以把一本书发布成网站。</p><p lang="en">Phones on the same Wi-Fi read by scanning a code; a book can also be published as a website.</p></div>
+            <div class="cell"><h3 lang="zh">加密的书</h3><h3 lang="en">Sealed books</h3><p lang="zh">正文、设定、记忆、图片、音频，连同关于这本书的对话，在磁盘上都是密文。</p><p lang="en">Text, bible, memory, pictures, audio and the conversations about the book are ciphertext on disk.</p></div>
+        </div>
+        <p class="note"><a lang="zh" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/features.zh.md">每一项能力的完整说明 →</a><a lang="en" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/features.md">Every part of it, in full →</a></p>
+    </div>
+</section>
+
+<section id="people">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">画廊</span><span lang="en">Gallery</span></p>
+        <h2 lang="zh">书里的人，在工坊里画出来。</h2>
+        <h2 lang="en">The people of a book, drawn in the Studio.</h2>
+        <p class="lede" lang="zh">每个人物先有一张正侧背的人设图，之后画这个人都带着它；一本书守一种画风。下面是《红楼梦》和《爱丽丝漫游奇境》里的人，都是用 GPT Image（经 Codex）画的。</p>
+        <p class="lede" lang="en">Each character first gets a design sheet — front, side, back — that goes with every later picture of them, and a book keeps one look. These are people from <em>Alice's Adventures in Wonderland</em> and 红楼梦 (<em>Dream of the Red Chamber</em>), drawn with GPT Image through Codex.</p>
+        <div class="people" lang="zh">
+            <figure><img src="img/people/baoyu.webp" width="480" height="640" alt="Jia Baoyu · 贾宝玉" loading="lazy"><figcaption><span lang="zh">贾宝玉</span><span lang="en">Jia Baoyu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/daiyu.webp" width="480" height="640" alt="Lin Daiyu · 林黛玉" loading="lazy"><figcaption><span lang="zh">林黛玉</span><span lang="en">Lin Daiyu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/baochai.webp" width="480" height="640" alt="Xue Baochai · 薛宝钗" loading="lazy"><figcaption><span lang="zh">薛宝钗</span><span lang="en">Xue Baochai</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/xifeng.webp" width="480" height="640" alt="Wang Xifeng · 王熙凤" loading="lazy"><figcaption><span lang="zh">王熙凤</span><span lang="en">Wang Xifeng</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/grandmother-jia.webp" width="480" height="640" alt="Grandmother Jia · 贾母" loading="lazy"><figcaption><span lang="zh">贾母</span><span lang="en">Grandmother Jia</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/granny-liu.webp" width="480" height="640" alt="Granny Liu · 刘姥姥" loading="lazy"><figcaption><span lang="zh">刘姥姥</span><span lang="en">Granny Liu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/alice.webp" width="480" height="640" alt="Alice · 爱丽丝" loading="lazy"><figcaption><span lang="zh">爱丽丝</span><span lang="en">Alice</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/white-rabbit.webp" width="480" height="640" alt="White Rabbit · 白兔" loading="lazy"><figcaption><span lang="zh">白兔</span><span lang="en">White Rabbit</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/cheshire-cat.webp" width="480" height="640" alt="Cheshire Cat · 柴郡猫" loading="lazy"><figcaption><span lang="zh">柴郡猫</span><span lang="en">Cheshire Cat</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/hatter.webp" width="480" height="640" alt="Hatter · 帽匠" loading="lazy"><figcaption><span lang="zh">帽匠</span><span lang="en">Hatter</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/queen-of-hearts.webp" width="480" height="640" alt="Queen of Hearts · 红心王后" loading="lazy"><figcaption><span lang="zh">红心王后</span><span lang="en">Queen of Hearts</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/caterpillar.webp" width="480" height="640" alt="Caterpillar · 毛毛虫" loading="lazy"><figcaption><span lang="zh">毛毛虫</span><span lang="en">Caterpillar</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+        </div>
+        <div class="people" lang="en">
+            <figure><img src="img/people/alice.webp" width="480" height="640" alt="Alice · 爱丽丝" loading="lazy"><figcaption><span lang="zh">爱丽丝</span><span lang="en">Alice</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/white-rabbit.webp" width="480" height="640" alt="White Rabbit · 白兔" loading="lazy"><figcaption><span lang="zh">白兔</span><span lang="en">White Rabbit</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/cheshire-cat.webp" width="480" height="640" alt="Cheshire Cat · 柴郡猫" loading="lazy"><figcaption><span lang="zh">柴郡猫</span><span lang="en">Cheshire Cat</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/hatter.webp" width="480" height="640" alt="Hatter · 帽匠" loading="lazy"><figcaption><span lang="zh">帽匠</span><span lang="en">Hatter</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/queen-of-hearts.webp" width="480" height="640" alt="Queen of Hearts · 红心王后" loading="lazy"><figcaption><span lang="zh">红心王后</span><span lang="en">Queen of Hearts</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/caterpillar.webp" width="480" height="640" alt="Caterpillar · 毛毛虫" loading="lazy"><figcaption><span lang="zh">毛毛虫</span><span lang="en">Caterpillar</span><small lang="zh">《爱丽丝漫游奇境》</small><small lang="en"><em>Alice’s Adventures in Wonderland</em></small></figcaption></figure>
+            <figure><img src="img/people/baoyu.webp" width="480" height="640" alt="Jia Baoyu · 贾宝玉" loading="lazy"><figcaption><span lang="zh">贾宝玉</span><span lang="en">Jia Baoyu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/daiyu.webp" width="480" height="640" alt="Lin Daiyu · 林黛玉" loading="lazy"><figcaption><span lang="zh">林黛玉</span><span lang="en">Lin Daiyu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/baochai.webp" width="480" height="640" alt="Xue Baochai · 薛宝钗" loading="lazy"><figcaption><span lang="zh">薛宝钗</span><span lang="en">Xue Baochai</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/xifeng.webp" width="480" height="640" alt="Wang Xifeng · 王熙凤" loading="lazy"><figcaption><span lang="zh">王熙凤</span><span lang="en">Wang Xifeng</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/grandmother-jia.webp" width="480" height="640" alt="Grandmother Jia · 贾母" loading="lazy"><figcaption><span lang="zh">贾母</span><span lang="en">Grandmother Jia</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+            <figure><img src="img/people/granny-liu.webp" width="480" height="640" alt="Granny Liu · 刘姥姥" loading="lazy"><figcaption><span lang="zh">刘姥姥</span><span lang="en">Granny Liu</span><small lang="zh">《红楼梦》</small><small lang="en"><em>Dream of the Red Chamber</em></small></figcaption></figure>
+        </div>
+    </div>
+</section>
+
+<section id="install">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">安装</span><span lang="en">Install</span></p>
+        <h2 lang="zh">三种装法，挑一种。</h2>
+        <h2 lang="en">Three ways in. Pick one.</h2>
+        <div class="install">
+            <div class="card">
+                <h3 lang="zh">桌面版</h3><h3 lang="en">Desktop app</h3>
+                <ol lang="zh"><li>左侧栏<b>插件</b> → <b>添加插件</b>。</li><li>填 <code>github:xuhao1/dsh-novel-writer</code>，或发布包 / 源码目录的绝对路径。</li><li>安装。左侧栏出现<b>鲸灵工坊</b>，新会话的预设里有<b>小说家 Novelist</b>。</li></ol>
+                <ol lang="en"><li><b>Plugins</b> in the left sidebar → <b>Add plugin</b>.</li><li>Enter <code>github:xuhao1/dsh-novel-writer</code>, or the absolute path of a tarball or a built checkout.</li><li>Install. <b>Whaleling Studio</b> appears in the sidebar and <b>小说家 Novelist</b> among the presets of a new session.</li></ol>
+            </div>
+            <div class="card">
+                <h3 lang="zh">Web 界面</h3><h3 lang="en">Web UI</h3>
+                <p lang="zh"><code>dsh plugin</code> 会调用 pnpm，需要它在 <code>PATH</code> 里。</p>
+                <p lang="en"><code>dsh plugin</code> runs pnpm, which must be on your <code>PATH</code>.</p>
+<pre>dsh plugin --profile web add \
+  github:xuhao1/dsh-novel-writer</pre>
+            </div>
+            <div class="card">
+                <h3 lang="zh">自己构建</h3><h3 lang="en">Build it yourself</h3>
+                <p lang="zh">需要 Node.js 22+。</p>
+                <p lang="en">Needs Node.js 22+.</p>
+<pre>git clone https://github.com/xuhao1/dsh-novel-writer.git
+cd dsh-novel-writer
+npm install   <span class="c"># builds lib/</span>
+npm pack      <span class="c"># → .tgz</span></pre>
+            </div>
+        </div>
+        <p class="req" lang="zh">需要 DeepSeek Harness <code>0.2.0-rc.2</code> 及以上（<code>&lt; 0.3</code>）。第一次打开工坊，选一个服务、贴一个 key，插图、配音和检索就一次配好；文字模型用 DSH 里已经接好的。ChatGPT 订阅也能画图，不用 key。</p>
+        <p class="req" lang="en">Requires DeepSeek Harness <code>0.2.0-rc.2</code> or later (<code>&lt; 0.3</code>). The first time the Studio opens, pick a service and paste one key: pictures, speech and retrieval are set up at once; text runs on whatever models DSH already has. A ChatGPT subscription can draw too, with no key.</p>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="open">
+            <div>
+                <p class="eyebrow"><span lang="zh">开源</span><span lang="en">Open source</span></p>
+                <h2 lang="zh">书是你的，代码也是开放的。</h2>
+                <h2 lang="en">The books are yours. The code is open.</h2>
+                <p lang="zh">以 LGPL-3.0-or-later 发布。书就是你工作区里的普通目录——Markdown 和 JSON，放进 git 也顺手。除了你配置的模型接口，不往任何地方发数据，没有遥测；密钥只存在本机 DSH 的凭据库里。</p>
+                <p lang="en">Released under the LGPL-3.0-or-later. A book is an ordinary directory in your workspace — Markdown and JSON that version well with git. Nothing is sent anywhere but the model endpoints you configured; there is no telemetry, and keys stay in DSH's credential store on your machine.</p>
+                <div class="links">
+                    <a class="btn primary" href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a>
+                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/CONTRIBUTING.md"><span lang="zh">参与开发</span><span lang="en">Contributing</span></a>
+                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/design.zh.md" lang="zh">设计与实现</a>
+                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/design.md" lang="en">Design notes</a>
+                </div>
+            </div>
+            <img src="img/hero-maid.webp" width="560" height="373" alt="DeepSeek-chan sitting on a stack of books, waving, an open book in her lap" loading="lazy">
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+        <div>
+            <p lang="zh">鲸灵工坊 · Whaleling Studio — 作者 Dr. Xu · LGPL-3.0-or-later</p>
+            <p lang="en">Whaleling Studio · 鲸灵工坊 — by Dr. Xu · LGPL-3.0-or-later</p>
+            <p lang="zh">截图里的书是公版：曹雪芹《红楼梦》；Lewis Carroll《爱丽丝漫游奇境》（文本取自 Project Gutenberg）。</p>
+            <p lang="en">The books in the screenshots are in the public domain: <em>Alice's Adventures in Wonderland</em> by Lewis Carroll (text from Project Gutenberg) and 红楼梦 by 曹雪芹.</p>
+        </div>
+        <div>
+            <p><a href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a> · <a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.getElementById("lang-switch").addEventListener("click", function () {
+    var root = document.documentElement;
+    var lang = root.dataset.lang === "zh" ? "en" : "zh";
+    root.dataset.lang = lang;
+    root.lang = lang === "zh" ? "zh-CN" : "en";
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+});
+</script>
+</body>
+</html>
