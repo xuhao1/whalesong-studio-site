@@ -1,6 +1,6 @@
-# Whaleling Studio · 鲸灵工坊 — website
+# Whalesong Studio · 鲸歌工坊 — website
 
-The project page of [Whaleling Studio](https://github.com/xuhao1/whaleling-studio) (鲸灵工坊), the long-form fiction plugin for DeepSeek Harness: one static page in two languages, served by GitHub Pages from the root of `main` at <https://whaleling.xuhao1.me> (`CNAME`).
+The project page of [Whalesong Studio](https://github.com/xuhao1/whalesong-studio) (鲸歌工坊), the long-form fiction plugin for DeepSeek Harness: one static page in two languages, served by GitHub Pages from the root of `main` at <https://whalesong.xuhao1.me> (`CNAME`).
 
 - `index.html` — the page; Chinese and English side by side (`lang="zh"` / `lang="en"`), the language switch keeps the choice in `localStorage`; `?lang=en` or `?lang=zh` picks one.
 - `style.css` — light theme, no web fonts, no scripts beyond the language switch.
