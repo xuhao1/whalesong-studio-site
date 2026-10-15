@@ -6,12 +6,12 @@
 <meta name="color-scheme" content="light">
 <title>Whaleling Studio · 鲸灵工坊 — a crew of agents for long-form fiction</title>
 <meta name="description" content="鲸灵工坊：DeepSeek Harness 的长篇小说插件。总编、写手、场记、策划、导演、后期，一支 AI 剧组陪你写长篇。Whaleling Studio: a plugin for DeepSeek Harness — a showrunner, a writer and a crew of agents for long-form fiction.">
-<link rel="canonical" href="https://dsh-novel-studio.xuhao1.me/">
+<link rel="canonical" href="https://whaleling.xuhao1.me/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Whaleling Studio · 鲸灵工坊">
 <meta property="og:description" content="A crew of agents for long-form fiction, on DeepSeek Harness. Open source (LGPL-3.0).">
-<meta property="og:url" content="https://dsh-novel-studio.xuhao1.me/">
-<meta property="og:image" content="https://dsh-novel-studio.xuhao1.me/img/og.jpg">
+<meta property="og:url" content="https://whaleling.xuhao1.me/">
+<meta property="og:image" content="https://whaleling.xuhao1.me/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -35,12 +35,13 @@
     <div class="wrap">
         <a class="brand" href="#top"><img src="img/icon.webp" alt="" width="30" height="30"><span lang="zh">鲸灵工坊</span><span lang="en">Whaleling Studio</span></a>
         <nav class="nav-links">
+            <a href="#books"><span lang="zh">在线阅读</span><span lang="en">Read online</span></a>
             <a href="#crew"><span lang="zh">剧组</span><span lang="en">The crew</span></a>
             <a href="#features"><span lang="zh">功能</span><span lang="en">Features</span></a>
             <a href="#people"><span lang="zh">画廊</span><span lang="en">Gallery</span></a>
             <a href="#install"><span lang="zh">安装</span><span lang="en">Install</span></a>
         </nav>
-        <a class="gh" href="https://github.com/xuhao1/dsh-novel-writer"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        <a class="gh" href="https://github.com/xuhao1/whaleling-studio"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
         <button class="lang-switch" type="button" id="lang-switch" aria-label="Switch language / 切换语言"><span lang="zh">EN</span><span lang="en">中文</span></button>
     </div>
 </header>
@@ -55,9 +56,10 @@
         <p class="tagline" lang="en">A crew of agents for long-form fiction. You decide; the showrunner plans, the writer writes, continuity keeps the record, the planner works out what could happen, the director stages it and post-production cuts it — so that one story's people, world and promises hold across hundreds of thousands of words.</p>
         <div class="cta">
             <a class="btn primary" href="#install"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M3 14h10"/></svg><span lang="zh">安装</span><span lang="en">Install</span></a>
-            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/tutorial.zh.md" lang="zh">新手教程</a>
-            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/tutorial.md" lang="en">Tutorial</a>
-            <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a>
+            <a class="btn" href="#books"><span lang="zh">在线读两本书</span><span lang="en">Read two books online</span></a>
+            <a class="btn" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/tutorial.zh.md" lang="zh">新手教程</a>
+            <a class="btn" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/tutorial.md" lang="en">Tutorial</a>
+            <a class="btn" href="https://github.com/xuhao1/whaleling-studio">GitHub</a>
         </div>
         <p class="caption" lang="zh">桌面版与 Web 界面都能用 · DeepSeek Harness 0.2 · 文字模型用 DSH 里配好的任何一个</p>
         <p class="caption" lang="en">Desktop app and Web UI · DeepSeek Harness 0.2 · text from any model DSH has</p>
@@ -67,6 +69,60 @@
         <figcaption class="caption" lang="zh">封面由 GPT Image（经 Codex）绘制。DeepSeek 娘形象参考：上善无形的“溟月”、ZipZipPipe 的 DeepSeek 女仆版设定。</figcaption>
         <figcaption class="caption" lang="en">Cover drawn with GPT Image through Codex. DeepSeek-chan after 溟月 by 上善无形 and the DeepSeek maid design by ZipZipPipe.</figcaption>
     </figure>
+</section>
+
+<section id="books">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">在线阅读</span><span lang="en">Read them now</span></p>
+        <h2 lang="zh">两本书，从工坊里发布成的网站。</h2>
+        <h2 lang="en">Two books, published from the Studio.</h2>
+        <p class="lede" lang="zh">这两个网站都是工坊"发布成网站"直接做出来的：正文、人物、世界，图都是在工坊里画的。不用装任何东西，点开就读；手机上也行。</p>
+        <p class="lede" lang="en">Both sites came straight out of the Studio's "publish as a site": the text, the people and the world, every picture drawn in the Studio. Nothing to install — open one and read, on a phone too.</p>
+        <div class="books" lang="zh">
+            <a class="book" href="books/hongloumeng/">
+                <img src="img/books/hongloumeng.webp" width="480" height="720" alt="《红楼梦》的封面：雨中回廊上的宝玉和黛玉" loading="lazy">
+                <div>
+                    <h3 lang="zh">红楼梦</h3><h3 lang="en">Dream of the Red Chamber (红楼梦)</h3>
+                    <p class="by" lang="zh">曹雪芹</p><p class="by" lang="en">Cao Xueqin, in Chinese</p>
+                    <p class="facts" lang="zh">八十回 · 49 万字 · 201 个人物 · 116 处地方</p><p class="facts" lang="en">80 chapters · 490,000 characters · 201 people · 116 places</p>
+                    <p lang="zh">整部前八十回导入工坊：每一回收录成记忆，人物归并成卡，大观园里的去处一层层理出来，主要人物和地方都画了。</p><p lang="en">The first eighty chapters brought in whole: every chapter digested, the cast merged into cards, the places of the Grand View Garden worked out one inside another, the leads and the main places drawn.</p>
+                    <span class="go"><span lang="zh">开始读 →</span><span lang="en">Start reading →</span></span>
+                </div>
+            </a>
+            <a class="book" href="books/alice/">
+                <img src="img/books/alice.webp" width="480" height="720" alt="Cover of Alice's Adventures in Wonderland: Alice in the hall of doors" loading="lazy">
+                <div>
+                    <h3 lang="zh">爱丽丝漫游奇境</h3><h3 lang="en">Alice's Adventures in Wonderland</h3>
+                    <p class="by" lang="zh">Lewis Carroll（英文）</p><p class="by" lang="en">Lewis Carroll</p>
+                    <p class="facts" lang="zh">12 章 · 2.6 万词 · 20 个人物 · 11 处地方</p><p class="facts" lang="en">12 chapters · 26,000 words · 20 people · 11 places</p>
+                    <p lang="zh">整本导入，五分钟读完、理清：人物卡和立绘、仙境里的去处、正文里的插图，画风是维多利亚时代的钢笔淡彩。</p><p lang="en">Brought in whole and read through in five minutes: the cards and their portraits, the places of Wonderland, pictures in the text — in the manner of a Victorian pen-and-ink with a light wash.</p>
+                    <span class="go"><span lang="zh">开始读 →</span><span lang="en">Start reading →</span></span>
+                </div>
+            </a>
+        </div>
+        <div class="books" lang="en">
+            <a class="book" href="books/alice/">
+                <img src="img/books/alice.webp" width="480" height="720" alt="Cover of Alice's Adventures in Wonderland: Alice in the hall of doors" loading="lazy">
+                <div>
+                    <h3 lang="zh">爱丽丝漫游奇境</h3><h3 lang="en">Alice's Adventures in Wonderland</h3>
+                    <p class="by" lang="zh">Lewis Carroll（英文）</p><p class="by" lang="en">Lewis Carroll</p>
+                    <p class="facts" lang="zh">12 章 · 2.6 万词 · 20 个人物 · 11 处地方</p><p class="facts" lang="en">12 chapters · 26,000 words · 20 people · 11 places</p>
+                    <p lang="zh">整本导入，五分钟读完、理清：人物卡和立绘、仙境里的去处、正文里的插图，画风是维多利亚时代的钢笔淡彩。</p><p lang="en">Brought in whole and read through in five minutes: the cards and their portraits, the places of Wonderland, pictures in the text — in the manner of a Victorian pen-and-ink with a light wash.</p>
+                    <span class="go"><span lang="zh">开始读 →</span><span lang="en">Start reading →</span></span>
+                </div>
+            </a>
+            <a class="book" href="books/hongloumeng/">
+                <img src="img/books/hongloumeng.webp" width="480" height="720" alt="《红楼梦》的封面：雨中回廊上的宝玉和黛玉" loading="lazy">
+                <div>
+                    <h3 lang="zh">红楼梦</h3><h3 lang="en">Dream of the Red Chamber (红楼梦)</h3>
+                    <p class="by" lang="zh">曹雪芹</p><p class="by" lang="en">Cao Xueqin, in Chinese</p>
+                    <p class="facts" lang="zh">八十回 · 49 万字 · 201 个人物 · 116 处地方</p><p class="facts" lang="en">80 chapters · 490,000 characters · 201 people · 116 places</p>
+                    <p lang="zh">整部前八十回导入工坊：每一回收录成记忆，人物归并成卡，大观园里的去处一层层理出来，主要人物和地方都画了。</p><p lang="en">The first eighty chapters brought in whole: every chapter digested, the cast merged into cards, the places of the Grand View Garden worked out one inside another, the leads and the main places drawn.</p>
+                    <span class="go"><span lang="zh">开始读 →</span><span lang="en">Start reading →</span></span>
+                </div>
+            </a>
+        </div>
+    </div>
 </section>
 
 <section id="crew">
@@ -196,7 +252,7 @@
             <div class="cell"><h3 lang="zh">手机与网站</h3><h3 lang="en">Phone and website</h3><p lang="zh">同一个 Wi-Fi 下手机扫码就读；也可以把一本书发布成网站。</p><p lang="en">Phones on the same Wi-Fi read by scanning a code; a book can also be published as a website.</p></div>
             <div class="cell"><h3 lang="zh">加密的书</h3><h3 lang="en">Sealed books</h3><p lang="zh">正文、设定、记忆、图片、音频，连同关于这本书的对话，在磁盘上都是密文。</p><p lang="en">Text, bible, memory, pictures, audio and the conversations about the book are ciphertext on disk.</p></div>
         </div>
-        <p class="note"><a lang="zh" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/features.zh.md">每一项能力的完整说明 →</a><a lang="en" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/features.md">Every part of it, in full →</a></p>
+        <p class="note"><a lang="zh" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/features.zh.md">每一项能力的完整说明 →</a><a lang="en" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/features.md">Every part of it, in full →</a></p>
     </div>
 </section>
 
@@ -246,22 +302,22 @@
         <div class="install">
             <div class="card">
                 <h3 lang="zh">桌面版</h3><h3 lang="en">Desktop app</h3>
-                <ol lang="zh"><li>左侧栏<b>插件</b> → <b>添加插件</b>。</li><li>填 <code>github:xuhao1/dsh-novel-writer</code>，或发布包 / 源码目录的绝对路径。</li><li>安装。左侧栏出现<b>鲸灵工坊</b>，新会话的预设里有<b>小说家 Novelist</b>。</li></ol>
-                <ol lang="en"><li><b>Plugins</b> in the left sidebar → <b>Add plugin</b>.</li><li>Enter <code>github:xuhao1/dsh-novel-writer</code>, or the absolute path of a tarball or a built checkout.</li><li>Install. <b>Whaleling Studio</b> appears in the sidebar and <b>小说家 Novelist</b> among the presets of a new session.</li></ol>
+                <ol lang="zh"><li>左侧栏<b>插件</b> → <b>添加插件</b>。</li><li>填 <code>github:xuhao1/whaleling-studio</code>，或发布包 / 源码目录的绝对路径。</li><li>安装。左侧栏出现<b>鲸灵工坊</b>，新会话的预设里有<b>小说家 Novelist</b>。</li></ol>
+                <ol lang="en"><li><b>Plugins</b> in the left sidebar → <b>Add plugin</b>.</li><li>Enter <code>github:xuhao1/whaleling-studio</code>, or the absolute path of a tarball or a built checkout.</li><li>Install. <b>Whaleling Studio</b> appears in the sidebar and <b>小说家 Novelist</b> among the presets of a new session.</li></ol>
             </div>
             <div class="card">
                 <h3 lang="zh">Web 界面</h3><h3 lang="en">Web UI</h3>
                 <p lang="zh"><code>dsh plugin</code> 会调用 pnpm，需要它在 <code>PATH</code> 里。</p>
                 <p lang="en"><code>dsh plugin</code> runs pnpm, which must be on your <code>PATH</code>.</p>
 <pre>dsh plugin --profile web add \
-  github:xuhao1/dsh-novel-writer</pre>
+  github:xuhao1/whaleling-studio</pre>
             </div>
             <div class="card">
                 <h3 lang="zh">自己构建</h3><h3 lang="en">Build it yourself</h3>
                 <p lang="zh">需要 Node.js 22+。</p>
                 <p lang="en">Needs Node.js 22+.</p>
-<pre>git clone https://github.com/xuhao1/dsh-novel-writer.git
-cd dsh-novel-writer
+<pre>git clone https://github.com/xuhao1/whaleling-studio.git
+cd whaleling-studio
 npm install   <span class="c"># builds lib/</span>
 npm pack      <span class="c"># → .tgz</span></pre>
             </div>
@@ -281,10 +337,10 @@ npm pack      <span class="c"># → .tgz</span></pre>
                 <p lang="zh">以 LGPL-3.0-or-later 发布。书就是你工作区里的普通目录——Markdown 和 JSON，放进 git 也顺手。除了你配置的模型接口，不往任何地方发数据，没有遥测；密钥只存在本机 DSH 的凭据库里。</p>
                 <p lang="en">Released under the LGPL-3.0-or-later. A book is an ordinary directory in your workspace — Markdown and JSON that version well with git. Nothing is sent anywhere but the model endpoints you configured; there is no telemetry, and keys stay in DSH's credential store on your machine.</p>
                 <div class="links">
-                    <a class="btn primary" href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a>
-                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/CONTRIBUTING.md"><span lang="zh">参与开发</span><span lang="en">Contributing</span></a>
-                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/design.zh.md" lang="zh">设计与实现</a>
-                    <a class="btn" href="https://github.com/xuhao1/dsh-novel-writer/blob/main/docs/design.md" lang="en">Design notes</a>
+                    <a class="btn primary" href="https://github.com/xuhao1/whaleling-studio">GitHub</a>
+                    <a class="btn" href="https://github.com/xuhao1/whaleling-studio/blob/main/CONTRIBUTING.md"><span lang="zh">参与开发</span><span lang="en">Contributing</span></a>
+                    <a class="btn" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/design.zh.md" lang="zh">设计与实现</a>
+                    <a class="btn" href="https://github.com/xuhao1/whaleling-studio/blob/main/docs/design.md" lang="en">Design notes</a>
                 </div>
             </div>
             <img src="img/hero-maid.webp" width="560" height="373" alt="DeepSeek-chan sitting on a stack of books, waving, an open book in her lap" loading="lazy">
@@ -303,7 +359,7 @@ npm pack      <span class="c"># → .tgz</span></pre>
             <p lang="en">The books in the screenshots are in the public domain: <em>Alice's Adventures in Wonderland</em> by Lewis Carroll (text from Project Gutenberg) and 红楼梦 by 曹雪芹.</p>
         </div>
         <div>
-            <p><a href="https://github.com/xuhao1/dsh-novel-writer">GitHub</a> · <a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a></p>
+            <p><a href="https://github.com/xuhao1/whaleling-studio">GitHub</a> · <a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a></p>
         </div>
     </div>
 </footer>
