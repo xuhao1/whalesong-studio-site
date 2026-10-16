@@ -1,0 +1,25 @@
+{
+ "schema": 1,
+ "book": "novel_egfe78",
+ "publishedAt": "2026-10-16T17:07:37.700Z",
+ "files": {
+  "data/books.json": "8e084d5098129501440eb3cd796af8fa",
+  "data/novel_egfe78/album.json": "be2a5b45774a6d7303a691487f786345",
+  "data/novel_egfe78/book.json": "d0550f7188de86fe67b06cde658269f7",
+  "data/novel_egfe78/chapters/ch001.json": "e2043f5b0f94c4560bd68cc311263f6f",
+  "data/novel_egfe78/chapters/ch002.json": "61c85b16793ce55a15bf57ada4540f6c",
+  "data/novel_egfe78/chapters/ch003.json": "ec461e0b3e1a6fba604e1bf323852d7a",
+  "index.html": "1207210613d564aac6cbb17b9c37627d",
+  "media/novel_egfe78/assets/images/cover-978ea54d.jpg": "4d09fdca4b9828562384b4dd059d7ffe",
+  "media/novel_egfe78/assets/images/portrait-陆行舟-cf6aa032.jpg": "095833baf452a4d9bc4d32fbf6a6a1f1",
+  "media/novel_egfe78/assets/images/portrait-陆行舟-f89131ca.jpg": "ab6b4012b680778a30dad202513bd092",
+  "media/novel_egfe78/assets/images/sheet-陆行舟-bd172adc.jpg": "3cda2a85a6a5e1103d671ab21df99ff0",
+  "reader.js": "544434fde8f9c6f9ad8261df25f1143d"
+ },
+ "sources": {
+  "media/novel_egfe78/assets/images/sheet-陆行舟-bd172adc.jpg": "1c7eba23944df51fb0de77e67b96e9d4 jpeg/q2/4:4:4/1",
+  "media/novel_egfe78/assets/images/portrait-陆行舟-cf6aa032.jpg": "2601742ac21abc5980b360f6843352fc jpeg/q2/4:4:4/1",
+  "media/novel_egfe78/assets/images/cover-978ea54d.jpg": "e798cfcb97999a64f93bc7e93559bbf8 jpeg/q2/4:4:4/1",
+  "media/novel_egfe78/assets/images/portrait-陆行舟-f89131ca.jpg": "37b6f1407d6015def89214d87e5b1917 jpeg/q2/4:4:4/1"
+ }
+}
