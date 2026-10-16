@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=2026-10-16c">
+<link rel="stylesheet" href="style.css?v=2026-10-16d">
 <script>
 // Language: ?lang= wins, then the last choice, then the browser. Chinese shows without scripts.
 (function () {
@@ -40,6 +40,7 @@
             <a href="#features"><span lang="zh">功能</span><span lang="en">Features</span></a>
             <a href="#people"><span lang="zh">画廊</span><span lang="en">Gallery</span></a>
             <a href="#install"><span lang="zh">安装</span><span lang="en">Install</span></a>
+            <a href="#guides"><span lang="zh">教程</span><span lang="en">Guides</span></a>
         </nav>
         <a class="gh" href="https://github.com/xuhao1/whalesong-studio"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.130-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
         <button class="lang-switch" type="button" id="lang-switch" aria-label="Switch language / 切换语言"><span lang="zh">EN</span><span lang="en">中文</span></button>
@@ -59,6 +60,8 @@
             <a class="btn" href="#books"><span lang="zh">看看做出来的作品</span><span lang="en">See what it makes</span></a>
             <a class="btn" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/tutorial.zh.md" lang="zh">新手教程</a>
             <a class="btn" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/tutorial.md" lang="en">Tutorial</a>
+            <a class="btn" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.zh.md" lang="zh">用 ChatGPT 订阅</a>
+            <a class="btn" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.md" lang="en">On ChatGPT Plus / Pro</a>
             <a class="btn" href="https://github.com/xuhao1/whalesong-studio">GitHub</a>
         </div>
         <p class="caption" lang="zh">适用于 DeepSeek Harness 0.2，桌面版、网页版都能用；写作用你已经在用的任何文字模型。</p>
@@ -330,8 +333,34 @@ npm install   <span class="c"># builds lib/</span>
 npm pack      <span class="c"># → .tgz</span></pre>
             </div>
         </div>
-        <p class="req" lang="zh">需要 DeepSeek Harness 0.2.0-rc.2 或更新的 0.2 版本。第一次打开时，选一家服务、贴一个 API key，画图、配音、检索就全都配好了；写作用的文字模型，就是你在 DeepSeek Harness 里已经在用的。有 ChatGPT 订阅的话，画图连 key 都不用。</p>
-        <p class="req" lang="en">Requires DeepSeek Harness 0.2.0-rc.2 or a later 0.2 release. The first time you open it, pick a service and paste one API key — pictures, voices and search are all set up at once; the writing uses whatever text model you already have in DeepSeek Harness. With a ChatGPT subscription, pictures need no key at all.</p>
+        <p class="req" lang="zh">需要 DeepSeek Harness 0.2.0-rc.2 或更新的 0.2 版本。第一次打开时，选一家服务、贴一个 API key，画图、配音、检索就全都配好了；写作用的文字模型，就是你在 DeepSeek Harness 里已经在用的。有 ChatGPT Plus / Pro 的话，登录一次，写作和画图都不用 key——<a href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.zh.md">看怎么接</a>。一步步的截图在<a href="#guides">教程</a>里。</p>
+        <p class="req" lang="en">Requires DeepSeek Harness 0.2.0-rc.2 or a later 0.2 release. The first time you open it, pick a service and paste one API key — pictures, voices and search are all set up at once; the writing uses whatever text model you already have in DeepSeek Harness. With ChatGPT Plus or Pro, sign in once and neither the writing nor the pictures needs a key — <a href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.md">see how</a>. Step-by-step screenshots are in the <a href="#guides">guides</a>.</p>
+    </div>
+</section>
+
+<section id="guides">
+    <div class="wrap">
+        <p class="eyebrow"><span lang="zh">教程</span><span lang="en">Guides</span></p>
+        <h2 lang="zh">照着做，一步步来。</h2>
+        <h2 lang="en">Step by step, with the guides.</h2>
+        <div class="grid">
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/tutorial.zh.md"><h3>新手教程</h3><p>从安装到画册，每一步都有截图。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/tutorial.md"><h3>Tutorial</h3><p>From installing it to the album, with a screenshot at every step.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.zh.md"><h3>用 ChatGPT 订阅</h3><p>有 Plus / Pro 的话：登录一次，写作和插图都用订阅，不用 key。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/chatgpt.md"><h3>On ChatGPT Plus / Pro</h3><p>One sign-in, and the writing and the pictures run on your subscription — no key.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/features.zh.md"><h3>全部功能</h3><p>工坊的每一项能力，完整说明。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/features.md"><h3>Everything it does</h3><p>Every part of the Studio, in full.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/configuration.md"><h3>配置</h3><p>每一项设置、单本书的覆盖、部署默认值（英文）。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/configuration.md"><h3>Configuration</h3><p>Each setting, per-book overrides, deployment defaults.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/project-format.md"><h3>一本书在磁盘上的样子</h3><p>一本书的文件，逐个字段（英文）。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/project-format.md"><h3>A book on disk</h3><p>The files of a book, field by field.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/design.zh.md"><h3>设计思路</h3><p>角色为什么这样拆、记忆怎么分层、上下文怎么打包。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/docs/design.md"><h3>Design notes</h3><p>Why the roles are split as they are, how memory is layered, how context is packed.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/CONTRIBUTING.md"><h3>参与开发</h3><p>代码的目录结构、开发服务器、测试（英文）。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/CONTRIBUTING.md"><h3>Contributing</h3><p>The layout of the code, the dev server, the tests.</p></a>
+            <a class="cell guide" lang="zh" href="https://github.com/xuhao1/whalesong-studio/blob/main/CHANGELOG.md"><h3>变更日志</h3><p>每一版改了什么（英文）。</p></a>
+            <a class="cell guide" lang="en" href="https://github.com/xuhao1/whalesong-studio/blob/main/CHANGELOG.md"><h3>Changelog</h3><p>What changed in each release.</p></a>
+        </div>
     </div>
 </section>
 
