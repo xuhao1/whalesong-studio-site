@@ -1411,8 +1411,47 @@ Error generating stack: `+a.message+`
 
 .nv-volume-title {
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   min-width: 0;
+}
+
+/* The volume's history and its menu keep their size: a long synopsis beside them does not push them out of the list. */
+.nv-volume-head > :not(.nv-volume-title) {
+  flex-shrink: 0;
+}
+
+.nv-volume-synopsis {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nv-text-3);
+  font: inherit;
+  font-size: 11.5px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nv-volume-synopsis.is-open {
+  display: block;
+  -webkit-line-clamp: unset;
+  white-space: pre-wrap;
+}
+
+.nv-volume-goal {
+  display: block;
+  margin-top: 4px;
+}
+
+.nv-volume-busy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .nv-beats {

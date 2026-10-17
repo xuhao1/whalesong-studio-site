@@ -1411,8 +1411,47 @@ Error generating stack: `+a.message+`
 
 .nv-volume-title {
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   min-width: 0;
+}
+
+/* The volume's history and its menu keep their size: a long synopsis beside them does not push them out of the list. */
+.nv-volume-head > :not(.nv-volume-title) {
+  flex-shrink: 0;
+}
+
+.nv-volume-synopsis {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nv-text-3);
+  font: inherit;
+  font-size: 11.5px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nv-volume-synopsis.is-open {
+  display: block;
+  -webkit-line-clamp: unset;
+  white-space: pre-wrap;
+}
+
+.nv-volume-goal {
+  display: block;
+  margin-top: 4px;
+}
+
+.nv-volume-busy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .nv-beats {
@@ -4436,6 +4475,44 @@ button.nv-stat:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
+}
+
+/* The ChatGPT one-click stands first among the cards, side by side with them. */
+.nv-setup-chatgpt {
+  border-color: color-mix(in srgb, var(--nv-brand) 35%, var(--nv-border));
+}
+
+.nv-chatgpt-signin {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--nv-radius-s);
+  background: var(--nv-surface-2);
+}
+
+.nv-chatgpt-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.nv-chatgpt-steps li > .nv-keyrow {
+  margin-top: 6px;
+}
+
+a.nv-btn {
+  text-decoration: none;
+}
+
+.nv-chatgpt-code {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--nv-surface);
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 
 .nv-check.nv-check-inline {
